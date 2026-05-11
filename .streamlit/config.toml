@@ -1,1 +1,22 @@
+[theme]
+base = "light"                    # oder "dark"
+primaryColor = "#2E86C1"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#1F1F1F"
 
+[server]
+headless = true
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 300               # in MB, falls du mal größere Dateien brauchst
+
+[browser]
+gatherUsageStats = false          # verhindert Telemetrie
+
+[client]
+showErrorDetails = "full"         # hilfreich beim Debuggen auf HF Spaces
+
+[runner]
+fastReruns = false
