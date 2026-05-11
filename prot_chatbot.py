@@ -33,18 +33,38 @@ except:
 
 st.info("⬇️ Lade Datenbank aus dem Netz, bitte ca.20 Sekunden Geduld")
 DB_PATH = "medical_data.db" 
-try: 
-  if not os.path.exists(DB_PATH):
-    downloaded = hf_hub_download(
-        repo_id="Sigillus/medic_Chat",
-        filename="medical_data.db",
-        repo_type="dataset",
-        local_dir="."
-    )
-    DB_PATH = downloaded
-except Exception as e:
-   st.error(f"❌ Download fehlgeschlagen: {e}")
-   st.stop()
+@st.cache_resource
+def download_database():
+    if not os.path.exists(DB_PATH):
+        try:
+            downloaded_path = hf_hub_download(
+                repo_id="Sigillus/medic_Chat",
+                filename="medical_data.db",
+                repo_type="dataset",
+                local_dir=".",
+                force_download=False  # nur herunterladen wenn nicht vorhanden
+            )
+            return downloaded_path
+        except Exception as e:
+            st.error(f"❌ Download der Datenbank fehlgeschlagen: {e}")
+            st.stop()
+    return DB_PATH
+
+DB_PATH = download_database()
+
+###
+#try: 
+#  if not os.path.exists(DB_PATH):
+#    downloaded = hf_hub_download(
+#        repo_id="Sigillus/medic_Chat",
+#        filename="medical_data.db",
+#        repo_type="dataset",
+#        local_dir="."
+#    )
+#    DB_PATH = downloaded
+#except Exception as e:
+#   st.error(f"❌ Download fehlgeschlagen: {e}")
+#   st.stop()
     
 db_connection_str = f"sqlite:///{DB_PATH}"
 
