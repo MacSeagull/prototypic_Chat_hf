@@ -28,6 +28,11 @@ from huggingface_hub import hf_hub_download
 import streamlit as st
 from dotenv import load_dotenv
 
+st.set_page_config(
+    page_title="prototypischer ChatBot mit Soonderwissen für praktische Ärzte",
+    page_icon="🩺",
+    layout="wide"
+)
 try:
     qui = os.environ.get("TOGETHER_API_KEY")
 except: 
@@ -304,7 +309,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🩺 Prototypischer ChatBot mit Sonderwissen für praktische Ärzte")
+#st.title("🩺 Prototypischer ChatBot mit Sonderwissen für praktische Ärzte")
 
 st.markdown("""
 Dieses Versuchsprojekt enthält bislang nur folgende Wissensquellen:
