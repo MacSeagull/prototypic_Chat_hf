@@ -9,14 +9,17 @@ Created on Wed Apr 22 14:33:45 2026
 # hybrid RAG  bot mit reciprocal ranking
 # HIER IN ANBINDUNG AN  SQLITE  über huggingface
 #==================================================
-
+import json
+import numpy as np
 import os
 import sqlite3
 from langchain_openai import ChatOpenAI
-from langchain_community.vectorstores import SQLiteVSS
+#from langchain_community.vectorstores import SQLiteVSS
+#from langchain_core.tools import Tool
+from langchain_community.agent_toolkits import SQLDatabaseToolkit
+from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.retrievers import BM25Retriever
-from langchain_core.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_community.utilities import SQLDatabase
@@ -30,10 +33,14 @@ try:
 except: 
     load_dotenv()
     qui = os.environ.get("TOGETHER_API_KEY")
-
+if not qui:
+    st.error("❌ TOGETHER_API_KEY nicht gefunden. Bitte im Space unter Settings → Secrets hinzufügen.")
+    st.stop()
+    
 st.info("⬇️ Lade Datenbank aus dem Netz, bitte ca.20 Sekunden Geduld")
 DB_PATH = "medical_data.db" 
-@st.cache_resource
+
+@st.cache_resource(show_spinner=False)
 def download_database():
     if not os.path.exists(DB_PATH):
         try:
