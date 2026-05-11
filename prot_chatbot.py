@@ -51,20 +51,6 @@ def download_database():
     return DB_PATH
 
 DB_PATH = download_database()
-
-###
-#try: 
-#  if not os.path.exists(DB_PATH):
-#    downloaded = hf_hub_download(
-#        repo_id="Sigillus/medic_Chat",
-#        filename="medical_data.db",
-#        repo_type="dataset",
-#        local_dir="."
-#    )
-#    DB_PATH = downloaded
-#except Exception as e:
-#   st.error(f"❌ Download fehlgeschlagen: {e}")
-#   st.stop()
     
 db_connection_str = f"sqlite:///{DB_PATH}"
 
