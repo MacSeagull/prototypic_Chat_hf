@@ -1,1 +1,23 @@
+# Core
+streamlit>=1.38.0
 
+# LangChain & RAG
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langchain-huggingface>=0.1.0
+
+# Embeddings
+sentence-transformers>=3.0.0
+huggingface_hub>=0.25.0
+
+# Vector Search & DB
+numpy>=1.26.0
+sqlite3  # wird meist automatisch mitgeliefert
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.32.0
+
+# Performance & Caching
+cachetools>=5.0.0
