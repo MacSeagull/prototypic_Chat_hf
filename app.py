@@ -43,6 +43,7 @@ if not qui:
     st.stop()
     
 st.info("⬇️ Lade Datenbank aus dem Netz, bitte ca.20 Sekunden Geduld")
+st.divider()
 DB_PATH = "medical_data.db" 
 
 @st.cache_resource(show_spinner=False)
