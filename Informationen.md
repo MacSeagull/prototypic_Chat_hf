@@ -1,8 +1,5 @@
-
-
-# Linderung des Arztpraxis-Nachfolgeproblems
-
-### Unterstützung niedergelassener Ärzte durch einen ChatBot mit redaktionellem Sonderwissen zur Bewältigung der Bürokratie
+# Linderung des Arztpraxis-Nachfolgeproblems durch künstliche Intelligenz
+## Unterstützung niedergelassener Ärzte durch einen ChatBot zur Bewältigung der Bürokratie
 
 **Autor:** Helge Siegel
 
@@ -22,7 +19,7 @@ Die Nachfolge für Arztpraxen gestaltet sich zunehmend schwierig, da die Niederl
 
 Bisher wird das Potenzial von KI zur Entlastung von Ärzten kaum genutzt. Etablierte Bots (ChatGPT, Claude, Gemini etc.) bieten zwar relevante Inhalte, weisen jedoch spezifische Defizite auf:
 
-* **Unklare Herkunft:** Vermischung von Rechtsgrundlagen (z. B. DE, AT, CH).
+* **Unklare Herkunft:** Vermischung von Quellen (z.B. aus DE, AT, CH).
 * **Halluzinationen:** Generierung plausibler, aber faktisch falscher Inhalte.
 * **Offene Systeme:** Fehlender Fokus auf gesichertes, durch Entitäten des dt. Gesundheitssystems redaktioniertes Fachwissen.
 
@@ -50,4 +47,4 @@ Dieser ChatBot ist ein **erster Entwurf der Vision** unter Einsatz einfachster b
 
 **Kontakt:**
 
-Für Zusammenarbeit, fragen oder Rückmeldungen nutzen Sie bitte die im Bot integrierte **E-Mail-Funktion**.
+Für Zusammenarbeit, Fragen oder Rückmeldungen nutzen Sie bitte die im Bot integrierte **E-Mail-Funktion**.
